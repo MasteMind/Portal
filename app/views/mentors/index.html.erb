@@ -13,9 +13,11 @@
       <div class="chat-widget-left">
       
       <div class="row">
+        <div>
         <%= m.name%>
+      </div>
         <div class="btn btn-primary">
-            <h5><%= link_to (m.students.size.to_s+" Students"), mentor_path(m), :style => "color:white"%></h5>
+            <h5><%= link_to (m.students.size.to_s+" Students"), mentor_path(m), :style => "color:white; float : right; align:right;"%></h5>
             
           </div>
         </div>
