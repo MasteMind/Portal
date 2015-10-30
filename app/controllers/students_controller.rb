@@ -24,17 +24,17 @@ class StudentsController < ApplicationController
 
 
 	def create
-		@student = Student.new(user_params)
+		@student = Student.new(student_params)
 		if @student.save
 			redirect_to '/students'
 		else
-			redirect_to '/'
+			redirect_to '/students'
 		end
 	end
 
 	private
-	def user_params
-		params[:name, :email, :contact]
+	def student_params
+		params.require(:student).permit(:name, :email, :contact)
 	end
 
 end

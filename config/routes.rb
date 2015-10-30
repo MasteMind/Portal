@@ -11,12 +11,22 @@ Rails.application.routes.draw do
   get 'mentors/index/:id' => 'mentors#index', as: :imentor
   get 'mentors' => 'mentors#index'
 
-  get 'mentors/:id' => 'mentors#show', as: :mentor
+  get 'mentors/show/:id' => 'mentors#show', as: :mentor
 
   get 'students/index/:id' => 'students#index', as: :istudent
   get 'students' => 'students#index'
 
-  get 'students/:id' => 'students#show', as: :student
+  get 'students/show/:id' => 'students#show', as: :student
+
+  get 'mentors/new' => 'mentors#new', as: :mnew
+
+  post 'mentors' => 'mentors#create'
+
+  get 'students/new' => 'students#new', as: :snew
+
+  post 'students' => 'students#create'
+
+  get 'students/addMentor' => 'students#addMentor', as: :smentor
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

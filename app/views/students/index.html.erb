@@ -6,7 +6,8 @@
 
   <div class="col-md-12">
     <h1 class="page-head-line">Students</h1>
-    <h1 class="btn-primary">Add New Students</h1>
+    <h1 class="btn-primary">
+<%= link_to "Add New Student", snew_path, :style => "color:white"%></h1>
     <hr>
   </div>
 </div>
@@ -22,6 +23,7 @@
       <p><%= s.email%><p>
       <%= s.contact%>
     </div>
+    <%= link_to "Add Mentors", smentor_path%>
     <% end %>  
     
     </div>
