@@ -10,20 +10,24 @@
     <hr>
   </div>
 </div>
-<%= link_to "Add New Student", 'students'%>
     <% @students.each do |s| %>
+    <div class="chat-widget-left">
+      
+      <div class="row">
       <%= s.name%>
       <div class="btn btn-primary">
-            <h5><%= link_to (s.mentors.size.to_s+" Mentors"), student_path(m), :style => "color:white"%></h5>
+            <h5><%= link_to (s.mentors.size.to_s+" Mentors"), student_path(s), :style => "color:white"%></h5>
           </div>
+        </div>
       <p><%= s.email%><p>
       <%= s.contact%>
+    </div>
     <% end %>  
     
     </div>
     <hr>
-    <% @max.to_i.times do |m| %>
-      <%= link_to ((m+2).to_s+".. "), istudent_path(m+2)%>
+    <% (@max.to_i+1).times do |m| %>
+      <%= link_to ((m+1).to_s+".. "), istudent_path(m+1)%>
     <%end%>
   </div>
 </div>

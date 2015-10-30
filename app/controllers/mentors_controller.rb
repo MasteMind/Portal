@@ -7,7 +7,7 @@ class MentorsController < ApplicationController
 		@b = (params[:id] ||= "1").to_i * @size
 		@mentors = Mentor.where("?<id AND ?>=id",@a, @b)
 
-		@max = (Mentor.all().size / @size)
+		@max = (Mentor.all().size / @size)+1
 	end
 
 	def show

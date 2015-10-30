@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
 		@a = ((params[:id] ||= "1").to_i - 1) * @size
 		@b = (params[:id] ||= "1").to_i * @size
 		@students = Student.where("?<id AND ?>=id",@a, @b)
-		@max = (Student.all().size / @size)
+		@max = (Student.all().size / @size) +1
 	end
 
 	def show
