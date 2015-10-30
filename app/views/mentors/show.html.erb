@@ -1,0 +1,23 @@
+<div class="login">
+  <div class="container">
+    <div class="mentor">
+     <div class = "row"> 
+
+  <div class="col-md-12">
+    <h1 class="page-head-line"><%= @mentor.name%></h1>
+    <h1 class="btn-primary"><%= @mentor.email%></h1>
+    <h1 class=""><%= @mentor.contact%></class>
+    <hr>
+  </div>
+</div>
+<center>
+    <% @students.each do |s| %>
+      <h3><%= s.name%><h3>
+      <p><%= s.email%></p>
+      <%= s.contact%>
+    <% end %>
+  </center>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,36 @@
+
+<div class="login">
+  <div class="container">
+    <div class="mentor">
+     <div class = "row"> 
+
+  <div class="col-md-12">
+    <h1 class="page-head-line">Mentors</h1>
+    <h1 class="btn-primary">Add New Mentor</h1>
+    <hr>
+  </div>
+</div>
+    <% @mentors.each do |m| %>
+      <div class="chat-widget-left">
+      
+      <div class="row">
+        <%= m.name%>
+        <div class="btn btn-primary">
+            <h5><%= link_to (m.students.size.to_s+" Students"), mentor_path(m), :style => "color:white"%></h5>
+            
+          </div>
+        </div>
+      <p><%= m.email%></p>
+      <%= m.contact%>
+    </div>  
+      <hr>
+    <% end %>
+    </div>
+  </div>
+
+    <% @max.to_i.times do |m| %>
+      <%= link_to ((m+2).to_s+".. "), imentor_path(m+2)%>
+    <%end%>
+</div>
+
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  h1 {color : white}
+  </style>
+  <title>Portal</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+</head>
+  
+<body>
+  <div class="background">
+    <!--from here-->
+    
+    <!--till here-->
+    <div class="header">
+      <div class="container">
+        
+        <div class="nav pull-right">
+          <% if current_user %>
+          <ul>
+            <li><%= current_user.email%></li>
+            <li><%= link_to "Log out", logout_path, method: "delete"%></li>
+          </ul>
+          <%else%>
+          <ul><h3>
+            <li><%= link_to "LOGIN!", 'login'%></a></li>
+            <li><%= link_to "Signup", 'signup'%></a></li>
+          </ul></h3>
+          <%end%>
+        </div>
+      </div>
+    </div>
+
+<%= yield %>
+</div>
+</body>
+</html>
